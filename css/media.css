@@ -1,5 +1,5 @@
 @media (max-width: 1280px) {
-  .modal_content {
+  #form-modal .modal_content {
     max-width: 853px;
   }
 
@@ -8,6 +8,10 @@
     display: -ms-flexbox;
     display: flex;
     gap: 24px;
+  }
+
+  #auth-modal .form_body {
+    display: block;
   }
 
   .form_social {
@@ -342,9 +346,8 @@
     max-width: 100%;
   }
 
-  .modal_content {
+  #form-modal .modal_content {
     max-width: 491px;
-    /* top: 20%; */
   }
 
   .price__type {
@@ -789,7 +792,7 @@
   }
 
   .modal_content {
-    max-width: 320px;
+    /*max-width: 320px;*/
     padding: 24px;
   }
 

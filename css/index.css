@@ -2610,7 +2610,7 @@ s
   opacity: 1;
 }
 
-.modal_content--form1 {
+.modal_content--form {
   padding-bottom: 2.5rem;
   max-width: 491px;
 }
@@ -2650,8 +2650,39 @@ s
   stroke: #5CB1FF;
 }
 
-.form_footer .btn {
+#auth-modal .form_footer .btn {
+  margin: 24px 0 16px;
+}
+
+.form_footer .btn-border {
   width: 100%;
+  color: var(--blue, #5CB1FF);
+}
+
+.form_footer .btn-border:hover {
+  color: var(--white, #fff);
+}
+
+.form_footer-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.form_footer-link {
+  background: transparent;
+}
+
+#auth-modal .form_footer-link:first-child {
+  color: var(--blue, #5CB1FF);
+}
+
+#forgot-pass-modal .form_footer .btn {
+  margin: 16px 0;
+}
+
+#forgot-pass-modal .form_footer-item {
+  justify-content: center;
 }
 
 .modal_video {
