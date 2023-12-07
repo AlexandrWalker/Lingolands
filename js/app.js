@@ -138,59 +138,6 @@
       });
     })();
 
-    // Modal
-    const modalBTN = document.querySelectorAll('[data-modal]');
-    const body = document.body;
-    const modalClose = document.querySelectorAll('.modal_close');
-    const modal = document.querySelectorAll('.modal');
-
-    modalBTN.forEach(item => {
-      item.addEventListener('click', event => {
-        let $this = event.currentTarget;
-        let modalID = $this.getAttribute('data-modal');
-        let modal = document.getElementById(modalID);
-        let modalContent = modal.querySelector('.modal_content');
-
-        modalContent.addEventListener('click', event => {
-          event.stopPropagation();
-        });
-
-        modal.classList.add('show');
-        body.classList.add('no-scroll');
-
-        setTimeout(() => {
-          modalContent.style.transform = 'none';
-          modalContent.style.opacity = '1';
-        });
-      }, 1);
-    });
-
-    modalClose.forEach(item => {
-      item.addEventListener('click', event => {
-        let currentModal = event.currentTarget.closest('.modal');
-
-        closeModal(currentModal);
-      });
-    });
-
-    modal.forEach(item => {
-      item.addEventListener('click', event => {
-        let currentModal = event.currentTarget;
-
-        closeModal(currentModal);
-      });
-    });
-
-    function closeModal(currentModal) {
-      let modalContent = currentModal.querySelector('.modal_content');
-      modalContent.removeAttribute('style');
-
-      setTimeout(() => {
-        currentModal.classList.remove('show');
-        body.classList.remove('no-scroll');
-      }, 200);
-    }
-
     /* Burger */
     $(function () {
       var burgerBtn = $("#burger");
@@ -351,6 +298,36 @@
             e.removeClass("dropdown__list-item--active"),
             i.removeClass("dropdown__list-item--active");
         });
+    });
+
+    // Modals windows
+    var close = document.querySelectorAll('.modal_close');
+    var openBtn = document.querySelectorAll('.modal-btn');
+
+    Array.from(openBtn, openButton => {
+      openButton.addEventListener('click', e => {
+        let modalId = e.target.getAttribute('data-modal');
+        document.getElementById(modalId).classList.add("show");
+
+        Array.from(close, closeButton => {
+          closeButton.addEventListener('click', e => document.getElementById(modalId).classList.remove("show"));
+
+          window.addEventListener('keydown', (e) => {
+            if (e.key === "Escape") {
+              document.getElementById(modalId).classList.remove("show")
+            }
+          });
+
+          document.querySelector(".modal.show .modal_content").addEventListener('click', event => {
+            event._isClickWithInModal = true;
+          });
+
+          document.getElementById(modalId).addEventListener('click', event => {
+            if (event._isClickWithInModal) return;
+            event.currentTarget.classList.remove('show');
+          });
+        });
+      });
     });
 
   });
