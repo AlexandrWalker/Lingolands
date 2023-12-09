@@ -174,9 +174,9 @@
 
     // Video
     $((function () {
-      var t = $("#video"),
+      var t = $(".video"),
         e = $(".video-control"),
-        i = $("#myVideo")[0],
+        i = $(".myVideo")[0],
         n = $(".video-control__play"),
         o = $(".video-control__pause");
       e.click((function () {
@@ -329,6 +329,11 @@
         });
       });
     });
+
+    window.OnTarif = function (t) {
+      let tarif = $(t).attr('data-tarif-name');
+      $('.select-address').html(tarif);
+    }
 
   });
 })();
