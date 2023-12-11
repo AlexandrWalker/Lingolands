@@ -161,6 +161,26 @@
       });
     });
 
+    /* Close mobile menu */
+    window.addEventListener('keydown', (e) => {
+      if (e.key === "Escape") {
+        document.querySelector(".mobileMenu").classList.remove("show")
+        document.body.classList.remove("no-scroll")
+      }
+    });
+
+    document.getElementById("mobileMenuBlock").addEventListener('click', event => {
+      event._isClickWithInMenu = true;
+    });
+    document.getElementById("burger").addEventListener('click', event => {
+      event._isClickWithInMenu = true;
+    });
+    document.body.addEventListener('click', event => {
+      if (event._isClickWithInMenu) return;
+      document.querySelector(".mobileMenu").classList.remove("show")
+      document.body.classList.remove("no-scroll")
+    });
+
     /* Button */
     $(function () {
       var navBtn = $(".nav__item-btn");
@@ -188,10 +208,8 @@
             n.removeClass("hidden"),
             o.removeClass("visible"),
             t.removeClass("video-is-playing"));
-      }
-      ))
-    }
-    ));
+      }))
+    }));
 
     $(function () {
       let typeLesson = $('#type-lesson');
@@ -303,9 +321,16 @@
     // Modals windows
     var close = document.querySelectorAll('.modal_close');
     var openBtn = document.querySelectorAll('.modal-btn');
+    var show = document.getElementsByClassName('show');
 
     Array.from(openBtn, openButton => {
       openButton.addEventListener('click', e => {
+
+        if (show.length != 0) {
+          show[0].classList.remove('show');
+          show.length++;
+        }
+
         let modalId = e.target.getAttribute('data-modal');
         document.getElementById(modalId).classList.add("show");
 
@@ -330,10 +355,32 @@
       });
     });
 
-    window.OnTarif = function (t) {
-      let tarif = $(t).attr('data-tarif-name');
-      $('.select-address').html(tarif);
-    }
+    /* Invalid input */
+    $(function () {
+      $('input[type="radio"]').click(function () {
+        var selectedValue = $('input[type="radio"]:checked').val();
+        $("#contact-value").html(selectedValue);
+        $("#contact-placeholder").attr('placeholder', 'Укажите ваш ' + selectedValue + '*');
+      });
+    });
+
+    (function () {
+      var button = document.querySelectorAll('input[type="submit"]');
+      var input = document.querySelectorAll('input[required]');
+
+      for (var t = 0; t < button.length; t++) {
+        button[t].addEventListener('click', function () {
+          for (var i = 0; i < input.length; i++) {
+            if (input[i].value == '') {
+              input[i].classList.add("invalid");
+              input[i].placeholder = 'Ошибка';
+            } else {
+              input[i].classList.remove("invalid");
+            }
+          }
+        });
+      }
+    })();
 
   });
 })();

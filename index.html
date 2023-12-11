@@ -39,7 +39,7 @@
         </div>
       </div>
       <div class="mobileMenu" id="mobileMenu">
-        <div class="mobileMenu__block">
+        <div class="mobileMenu__block" id="mobileMenuBlock">
           <div class="mobileMenu__head">
             <a href="" data-scroll="#nav">
               <img src="img/logo.svg" alt="Logo" class="mobileMenu__logo">
@@ -137,7 +137,7 @@
             </div>
           </div>
 
-          <button class="modal-btn btn btn-border" type="button" data-modal="callback-modal">Войти</button>
+          <button class="modal-btn btn btn-border" type="button" data-modal="auth-modal">Войти</button>
 
           <button class="burger" id="burger">
             <span></span>
@@ -233,9 +233,9 @@
                 </div>
                 <div class="video-control video-over"></div>
                 <video class="myVideo" preload="auto" poster="img/video-poster.png">
-                  <source id="mp4" src="http://media.w3.org/2010/05/sintel/trailer.mp4" type="video/mp4">
-                  <source id="webm" src="http://media.w3.org/2010/05/sintel/trailer.webm" type="video/webm">
-                  <source id="ogv" src="http://media.w3.org/2010/05/sintel/trailer.ogv" type="video/ogg">
+                  <source src="http://media.w3.org/2010/05/sintel/trailer.mp4" type="video/mp4">
+                  <source src="http://media.w3.org/2010/05/sintel/trailer.webm" type="video/webm">
+                  <source src="http://media.w3.org/2010/05/sintel/trailer.ogv" type="video/ogg">
                 </video>
               </div>
 
@@ -1040,21 +1040,21 @@
               <div class="form_row">
                 <div class="form_group text-16">
                   <label for="form_control-1">Имя</label>
-                  <input id="form_control-1" class="form_control" type="text" placeholder="Имя*">
+                  <input id="form_control-1" class="form_control" type="text" placeholder="Имя*" required>
                 </div>
                 <div class="form_group text-16">
                   <label for="form_control-2">Фамилия</label>
-                  <input id="form_control-2" class="form_control" type="text" placeholder="Фамилия*">
+                  <input id="form_control-2" class="form_control" type="text" placeholder="Фамилия*" required>
                 </div>
               </div>
               <div class="form_row">
                 <div class="form_group text-16">
                   <label for="form_control-3">E-mail</label>
-                  <input id="form_control-3" class="form_control" type="email" placeholder="pochta@mail.ru*">
+                  <input id="form_control-3" class="form_control" type="email" placeholder="pochta@mail.ru*" required>
                 </div>
                 <div class="form_group text-16 form_group--24">
                   <label for="form_control-4">Телефон</label>
-                  <input id="form_control-4" class="form_control" type="tel" placeholder="+7 (999) 999-99-99*">
+                  <input id="form_control-4" class="form_control" type="tel" placeholder="+7 (999) 999-99-99*" required>
                 </div>
               </div>
             </div>
@@ -1076,8 +1076,8 @@
                 </div>
               </div>
               <div class="form_group  text-16 form_group--32">
-                <label>Skype</label>
-                <input class="form_control" type="text" placeholder="Укажите ваш Skype*">
+                <label id="contact-value">Skype</label>
+                <input id="contact-placeholder" class="form_control" type="text" placeholder="Укажите ваш Skype*">
               </div>
             </div>
           </div>
@@ -1094,7 +1094,6 @@
 
     <div class="modal" id="story-modal">
       <div class="modal_content modal_content--story">
-        <!-- <video class="modal_video" src="/" poster="https://placehold.it/450x580"></video> -->
 
         <div class="modal_video-item video">
           <div class="video-control video-play">
@@ -1103,9 +1102,9 @@
           </div>
           <div class="video-control video-over"></div>
           <video class="modal_video myVideo" preload="auto" poster="img/stories-1.png">
-            <source id="mp4" src="http://media.w3.org/2010/05/sintel/trailer.mp4" type="video/mp4">
-            <source id="webm" src="http://media.w3.org/2010/05/sintel/trailer.webm" type="video/webm">
-            <source id="ogv" src="http://media.w3.org/2010/05/sintel/trailer.ogv" type="video/ogg">
+            <source src="http://media.w3.org/2010/05/sintel/trailer.mp4" type="video/mp4">
+            <source src="http://media.w3.org/2010/05/sintel/trailer.webm" type="video/webm">
+            <source src="http://media.w3.org/2010/05/sintel/trailer.ogv" type="video/ogg">
           </video>
         </div>
 
@@ -1151,11 +1150,11 @@
           <div class="form_body">
             <div class="form_group text-16">
               <label>E-mail</label>
-              <input class="form_control" type="email" placeholder="">
+              <input class="form_control" type="email" placeholder="" required>
             </div>
             <div class="form_group text-16">
               <label>Пароль</label>
-              <input class="form_control" type="password" placeholder="">
+              <input class="form_control" type="password" placeholder="" required>
             </div>
           </div>
           <div class="form_footer">
@@ -1226,7 +1225,7 @@
             <div class="form_body-item">
               <div class="form_group form_textarea text-16">
                 <label>Сообщение</label>
-                <textarea class="form_control" type="textarea" placeholder="Сообщение*"></textarea>
+                <textarea class="form_control" placeholder="Сообщение*"></textarea>
               </div>
             </div>
           </div>
@@ -1253,13 +1252,13 @@
           <div class="modal__block-item">
             <div class="reviews__item-head">
               <img src="img/avatar-aleksandr.png" alt="avatar" class="reviews__item-img">
-              <div class="subhead reviews__item-name">Александр</div>
+              <div class="subhead reviews__item-name" id="reviews-name">Александр</div>
             </div>
             <p class="reviews__item-text text-16" id="reviews-text">
               Lorem ipsum dolor sit amet consectetur. Duis neque amet pretium est porttitor imperdiet elit risus.
               Mattis viverra nibh montes sagittis odio.
             </p>
-            <a href="#!" class="reviews__item-solial">
+            <a href="#!" class="reviews__item-solial" id="reviews-solial">
               <svg class="reviews__item-icon">
                 <use xlink:href="#vk"></use>
               </svg>

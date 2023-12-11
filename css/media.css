@@ -212,6 +212,9 @@
   }
 
   .why-us__inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
     flex-direction: column-reverse;
   }
 
@@ -339,6 +342,9 @@
   }
 
   .modal_content--callback .form_body {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
     gap: 24px;
   }
@@ -386,6 +392,10 @@
     -ms-flex-pack: center;
     justify-content: center;
   }
+
+  .uni-page__inner .container {
+    padding: 32px 20px 100px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -394,6 +404,9 @@
   }
 
   .modal_content--callback .form_body {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
   }
 
@@ -406,7 +419,11 @@
   }
 
   .advantages__item:last-child {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     gap: 40px;
     padding: 40px;
@@ -442,6 +459,10 @@
 
   .faq__content .text-18 {
     margin-bottom: 0;
+  }
+
+  .breadcrumb {
+    padding: 0;
   }
 }
 
