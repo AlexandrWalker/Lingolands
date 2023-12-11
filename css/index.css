@@ -1612,7 +1612,7 @@ h4 {
   cursor: pointer;
   border-radius: 20px;
   position: relative;
-  z-index: 1;
+  z-index: 3;
 }
 
 .stories__item:after {
@@ -1626,7 +1626,7 @@ h4 {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 3;
 }
 
 .stories__title {
@@ -2652,7 +2652,6 @@ s
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  overflow-y: scroll;
 }
 
 .modal_content {
@@ -2666,6 +2665,7 @@ s
   -webkit-transition: opacity 200ms ease-in-out;
   -o-transition: opacity 200ms ease-in-out;
   transition: opacity 200ms ease-in-out;
+  overflow-y: scroll;
 }
 
 .modal.show .modal_content {

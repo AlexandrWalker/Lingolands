@@ -52,7 +52,7 @@
         {
           breakpoint: 600,
           settings: {
-            slidesToShow: 1.1,
+            slidesToShow: 1.05,
             slidesToScroll: 1
           }
         }
@@ -84,7 +84,7 @@
         {
           breakpoint: 600,
           settings: {
-            slidesToShow: 1.1,
+            slidesToShow: 1.05,
             slidesToScroll: 1
           }
         }

@@ -612,6 +612,15 @@
     display: none;
   }
 
+  .advantages__item:last-child {
+    display: block;
+    padding: 40px 24px;
+  }
+
+  .advantages__item:last-child .advantages__item-icon {
+    margin-bottom: 24px;
+  }
+
   .banner__item:first-child,
   .banner__item:last-child,
   .banner__item {
@@ -625,6 +634,7 @@
 
   .price__type {
     margin-bottom: 40px;
+    overflow-x: scroll;
   }
 
   .price__type-item:first-child,
@@ -805,7 +815,7 @@
   }
 
   .reviews__items .slick-track {
-    gap: 8px;
+    gap: 30px;
   }
 
   .banner {
