@@ -2632,9 +2632,6 @@ s
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -2646,6 +2643,7 @@ s
   top: 0;
   left: 0;
   z-index: 1005;
+  overflow: auto;
 }
 
 .modal.show {
@@ -2658,6 +2656,7 @@ s
   width: 100%;
   max-width: 491px;
   padding: 40px;
+  margin: auto 0;
   position: relative;
   background-color: var(--white, #fff);
   border-radius: 20px;
@@ -2665,7 +2664,6 @@ s
   -webkit-transition: opacity 200ms ease-in-out;
   -o-transition: opacity 200ms ease-in-out;
   transition: opacity 200ms ease-in-out;
-  overflow-y: scroll;
 }
 
 .modal.show .modal_content {
@@ -3119,4 +3117,15 @@ input[type="radio"]:checked+.btn-border {
 
 .uni-page__text {
   margin-bottom: 24px;
+}
+
+.iti__flag {
+  background-image: url("../img/flags.png");
+}
+
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+  .iti__flag {
+    background-image: url("../img/flags@2x.png");
+  }
 }
