@@ -360,7 +360,10 @@
       $('input[type="radio"]').click(function () {
         var selectedValue = $('input[type="radio"]:checked').val();
         $("#contact-value").html(selectedValue);
-        $("#contact-placeholder").attr('placeholder', 'Укажите ваш ' + selectedValue + '*');
+        $(".contact-placeholder").attr("name", selectedValue);
+        $(".contact-placeholder").attr('placeholder', 'Укажите ваш ' + selectedValue + '*');
+        $(".contact-placeholder").attr('id', 'contact-' + selectedValue);
+        $(".form_soc-list").attr('id', selectedValue);
       });
     });
 
@@ -383,8 +386,35 @@
     })();
 
     const input = document.querySelector("#phone");
+    const inputWhatsApp = document.querySelector("#contact-WhatsApp");
+    const inputViber = document.querySelector("#contact-Viber");
+
     window.intlTelInput(input, {
-      onlyCountries: ["kz", "ru", "tr"],
+      separateDialCode: true,
+      utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js",
+      initialCountry: "auto",
+      geoIpLookup: function (callback) {
+        fetch("https://ipapi.co/json")
+          .then(function (res) { return res.json(); })
+          .then(function (data) { callback(data.country_code); })
+          .catch(function () { callback("us"); });
+      },
+    });
+
+    window.intlTelInput(inputWhatsApp, {
+      separateDialCode: true,
+      utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js",
+      initialCountry: "auto",
+      geoIpLookup: function (callback) {
+        fetch("https://ipapi.co/json")
+          .then(function (res) { return res.json(); })
+          .then(function (data) { callback(data.country_code); })
+          .catch(function () { callback("us"); });
+      },
+    });
+
+    window.intlTelInput(inputViber, {
+      separateDialCode: true,
       utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js",
       initialCountry: "auto",
       geoIpLookup: function (callback) {

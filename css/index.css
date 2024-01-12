@@ -3129,3 +3129,22 @@ input[type="radio"]:checked+.btn-border {
     background-image: url("../img/flags@2x.png");
   }
 }
+
+.iti--separate-dial-code .iti__selected-flag {
+  background-color: transparent !important;
+}
+
+.iti__selected-dial-code {
+  font-size: 13px !important;
+  color: var(--blue, #5CB1FF);
+}
+
+#contact-Skype,
+#contact-Telegram {
+  padding-left: 16px !important;
+}
+
+#Skype .iti__flag-container,
+#Telegram .iti__flag-container {
+  display: none !important;
+}

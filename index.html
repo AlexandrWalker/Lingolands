@@ -1058,8 +1058,8 @@
                   <input id="form_control-3" class="form_control" type="email" placeholder="pochta@mail.ru*" required>
                 </div>
                 <div class="form_group text-16 form_group--24 iti">
-                  <label for="form_control-4">Телефон</label>
-                  <input id="form_control-4 phone" class="form_control" type="tel" placeholder="+7 (999) 999-99-99*"
+                  <label for="phone">Телефон</label>
+                  <input id="phone" class="form_control" type="tel" placeholder="(999) 999-99-99*"
                     required>
                 </div>
               </div>
@@ -1068,22 +1068,22 @@
               <p class="form_group--24 text-18">Укажите один из ваших мессенджеров</p>
               <div class="form_group text-16 form_group--16">
                 <div class="form_social">
-                  <input type="radio" id="contactChoice1" name="contact" value="WatsApp" />
-                  <label for="contactChoice1" class="btn btn-border">WatsApp</label>
+                  <input class="form_soc-input active" type="radio" id="contactChoice1" name="contact" value="WhatsApp" checked/>
+                  <label for="contactChoice1" class="btn btn-border">WhatsApp</label>
 
-                  <input type="radio" id="contactChoice2" name="contact" value="Skype" />
+                  <input class="form_soc-input" type="radio" id="contactChoice2" name="contact" value="Skype" />
                   <label for="contactChoice2" class="btn btn-border">Skype</label>
 
-                  <input type="radio" id="contactChoice3" name="contact" value="Viber" />
+                  <input class="form_soc-input" type="radio" id="contactChoice3" name="contact" value="Viber" />
                   <label for="contactChoice3" class="btn btn-border">Viber</label>
 
-                  <input type="radio" id="contactChoice4" name="contact" value="Telegram" />
+                  <input class="form_soc-input" type="radio" id="contactChoice4" name="contact" value="Telegram" />
                   <label for="contactChoice4" class="btn btn-border">Telegram</label>
                 </div>
               </div>
-              <div class="form_group  text-16 form_group--32">
-                <label id="contact-value">Skype</label>
-                <input id="contact-placeholder" class="form_control" type="text" placeholder="Укажите ваш Skype*">
+              <div class="form_group  text-16 form_group--32 form_soc-list">
+                <label id="contact-value">WhatsApp</label>
+                <input id="contact-WhatsApp" class="form_control contact-placeholder" name="WhatsApp" type="tel" placeholder="Укажите ваш WhatsApp*">
               </div>
             </div>
           </div>
