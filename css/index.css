@@ -2816,9 +2816,10 @@ input[type="radio"]:checked+.btn-border {
   width: 100%;
   position: relative;
   z-index: 1;
-  height: 280px;
+  min-height: 280px;
   border-radius: 20px;
   overflow: hidden;
+  aspect-ratio: 1/1.8;
 }
 
 .modal_video-item video {
