@@ -221,18 +221,20 @@
         event.preventDefault();
 
         typeLesson.addClass("active");
+        priceLesson.addClass("active");
+
         typeGroup.removeClass("active");
-        priceLesson.addClass("show");
-        priceGroup.removeClass("show");
+        priceGroup.removeClass("active");
       });
 
       typeGroup.on("click", function (event) {
         event.preventDefault();
 
-        typeLesson.removeClass("active");
         typeGroup.addClass("active");
-        priceGroup.addClass("show");
-        priceLesson.removeClass("show");
+        priceGroup.addClass("active");
+
+        typeLesson.removeClass("active");
+        priceLesson.removeClass("active");
       });
     });
 

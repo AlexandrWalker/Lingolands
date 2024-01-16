@@ -3041,7 +3041,7 @@ input[type="radio"]:checked+.btn-border {
   display: none;
 }
 
-#price-lesson.show {
+#price-lesson.active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3051,7 +3051,7 @@ input[type="radio"]:checked+.btn-border {
   display: none;
 }
 
-#price-group.show {
+#price-group.active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3125,6 +3125,7 @@ input[type="radio"]:checked+.btn-border {
 }
 
 @media (-webkit-min-device-pixel-ratio: 2),
+(-o-min-device-pixel-ratio: 2/1),
 (min-resolution: 192dpi) {
   .iti__flag {
     background-image: url("../img/flags@2x.png");
